@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noémi's Ultimate Valentine Proposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes float {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+      }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); filter: brightness(1); }
+        50% { opacity: 1; transform: scale(1.4) rotate(180deg); filter: brightness(1.5); }
+      }
+      @keyframes swayRise {
+        0% { 
+          transform: translateY(110vh) translateX(var(--start-x, 0)) scale(0) rotate(0deg); 
+          opacity: 0; 
+        }
+        10% { opacity: 0.6; }
+        50% {
+          transform: translateY(50vh) translateX(var(--mid-x, 40px)) scale(0.8) rotate(var(--mid-rot, 10deg));
+        }
+        100% { 
+          transform: translateY(-20vh) translateX(var(--end-x, -40px)) scale(1.2) rotate(var(--end-rot, -10deg)); 
+          opacity: 0; 
+        }
+      }
+      @keyframes sparkleFloat {
+        0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+        50% { transform: translate(var(--move-x, 10px), var(--move-y, -20px)) scale(1.3); opacity: 1; }
+        100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+      }
+      @keyframes textPop {
+        0% { opacity: 0; transform: translateY(20px) scale(0.5); filter: blur(10px); }
+        100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+      }
+      @keyframes burst {
+        0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+        100% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) scale(1); opacity: 0; }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      .animate-twinkle {
+        animation: twinkle 4s ease-in-out infinite;
+      }
+      .animate-sway-rise {
+        animation: swayRise 15s ease-in-out infinite;
+      }
+      .animate-sparkle-float {
+        animation: sparkleFloat 5s ease-in-out infinite;
+      }
+      .animate-text-pop {
+        display: inline-block;
+        animation: textPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        opacity: 0;
+      }
+      .particle {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        pointer-events: none;
+        animation: burst 0.8s ease-out forwards;
+      }
+      .heart-3d {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        transform-style: preserve-3d;
+        animation: rotateHeart 10s linear infinite;
+      }
+      @keyframes rotateHeart {
+        from { transform: rotateY(0deg) rotateX(0deg); }
+        to { transform: rotateY(360deg) rotateX(360deg); }
+      }
+      body {
+        background: linear-gradient(135deg, #fff5f5 0%, #fed7e2 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+    </style>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/noemi/assets/index-BiDU2Ycm.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
